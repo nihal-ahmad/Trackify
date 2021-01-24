@@ -5,12 +5,13 @@ from .views import (
     ArenaMembersListView,
     UsersArenaListView,
     ArenaBytesListView,
-    ArenaCreateView
+    ArenaCreateView,
+    CustomAuthToken
 )
 
 urlpatterns = [
     path('signup', SignUpView, name="signup"),
-    path('login', obtain_auth_token, name="login"),
+    path('login', CustomAuthToken.as_view(), name="login"),
     path('', UsersArenaListView.as_view(), name="users_arena"),
     re_path('^members/(?P<arena_name>.+)/$',
             ArenaMembersListView.as_view(), name="arena_members"),
