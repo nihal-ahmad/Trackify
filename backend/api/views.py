@@ -29,9 +29,6 @@ def SignUpView(request):
             response["username"] = account.username
             token = Token.objects.get(user=account).key
             response['token'] = token
-
-            new_user = UserInfo(username=account.username)
-            new_user.save()
         else:
             response = serializer.errors
 

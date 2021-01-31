@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from team.models import Opening
+from api.models import Opening
 
 UserModel = get_user_model()
 
