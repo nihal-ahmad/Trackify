@@ -5,56 +5,25 @@ from django.dispatch import receiver
 from rest_framework.authtoken.models import Token
 
 
-class Arena(models.Model):
-    name = models.CharField(max_length=256, blank=True)
-
-    def __str__(self):
-        return self.name
-
-
-class UserInfo(models.Model):
-    username = models.CharField(max_length=255)
-    arena = models.ManyToManyField(
-        Arena, blank=True, null=True)
-
-    def __str__(self):
-        return self.username
-
-
-class Byte(models.Model):
-    WEIGHTAGE = [
-        ('CHILL', 'CHILL'),
-        ('NORMAL', 'NORMAL'),
-        ('ASAP', 'ASAP'),
-        ('DUE', 'DUE')
-    ]
-
+class Opening(models.Model):
     STATUS = [
-        ('TODO', 'TODO'),
-        ('ACTIVE', 'ACTIVE'),
-        ('REVIEW', 'REVIEW'),
-        ('FINISHED', 'FINISHED')
+        ('to apply', 'to apply'),
+        ('applied', 'applied'),
+        ('ongoing', 'ongoing'),
+        ('rejected', 'rejected'),
+        ('offer', 'offer')
     ]
 
-    content = models.TextField()
-    weightage = models.CharField(
-        max_length=10, choices=WEIGHTAGE, default="CHILL")
-    status = models.CharField(max_length=10, choices=STATUS, default="TODO")
-    arena = models.ForeignKey(Arena, on_delete=models.CASCADE)
-    user_info = models.ForeignKey(
-        UserInfo, on_delete=models.CASCADE, blank=True, null=True)
+    user = models.CharField(max_length=255, blank=True)
+    company = models.CharField(max_length=255)
+    role = models.CharField(max_length=255, blank=True)
+    status = models.CharField(
+        max_length=20, choices=STATUS, default='to apply')
+    notes = models.TextField(blank=True, null=True)
+    applied_date = models.DateField(blank=True, null=True)
 
     def __str__(self):
-        return self.content
-
-
-class Thread(models.Model):
-    content = models.TextField()
-    author = models.CharField(max_length=256)
-    byte = models.ForeignKey(Byte, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.content
+        return self.company + " - " + self.role
 
 
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)

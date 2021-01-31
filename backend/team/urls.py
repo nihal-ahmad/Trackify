@@ -2,20 +2,24 @@ from django.urls import path, re_path
 from rest_framework.authtoken.views import obtain_auth_token
 from .views import (
     SignUpView,
-    ArenaMembersListView,
-    UsersArenaListView,
-    ArenaBytesListView,
-    ArenaCreateView,
-    CustomAuthToken
+    CustomAuthToken,
+    CreateNewOpening,
+    UpdateOpening,
+    ToApplyList,
+    AppliedList,
+    RejectedList,
+    OngoingList,
+    OfferList
 )
 
 urlpatterns = [
     path('signup', SignUpView, name="signup"),
     path('login', CustomAuthToken.as_view(), name="login"),
-    path('', UsersArenaListView.as_view(), name="users_arena"),
-    re_path('^members/(?P<arena_name>.+)/$',
-            ArenaMembersListView.as_view(), name="arena_members"),
-    re_path('^bytes/(?P<arena_name>.+)/$',
-            ArenaBytesListView.as_view(), name="arena_bytes"),
-    path('create/arena', ArenaCreateView, name="create_arena"),
+    path('api/create', CreateNewOpening, name="create"),
+    path('api/update', UpdateOpening, name="update"),
+    path('api/toapply', ToApplyList.as_view(), name="to_apply"),
+    path('api/applied', AppliedList.as_view(), name="to_apply"),
+    path('api/ongoing', OngoingList.as_view(), name="to_apply"),
+    path('api/rejected', RejectedList.as_view(), name="to_apply"),
+    path('api/offer', OfferList.as_view(), name="to_apply"),
 ]

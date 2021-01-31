@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from .models import UserInfo, Arena, Byte, Thread
+from team.models import Opening
 
 UserModel = get_user_model()
 
@@ -25,25 +25,31 @@ class SignUpSerializer(serializers.ModelSerializer):
         fields = ("id", "username", "email", "password", )
 
 
-class UserInfoSerializer(serializers.ModelSerializer):
+class OpeningSerializer(serializers.ModelSerializer):
     class Meta:
-        model = UserInfo
+        model = Opening
         fields = '__all__'
 
 
-class ArenaSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Arena
-        fields = '__all__'
+# class UserInfoSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = UserInfo
+#         fields = '__all__'
 
 
-class ByteSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Byte
-        fields = '__all__'
+# class ArenaSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Arena
+#         fields = '__all__'
 
 
-class ThreadSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Thread
-        fields = '__all__'
+# class ByteSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Byte
+#         fields = '__all__'
+
+
+# class ThreadSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Thread
+#         fields = '__all__'
