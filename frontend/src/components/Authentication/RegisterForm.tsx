@@ -79,7 +79,7 @@ function RegisterForm() {
 
                 <Form.Item {...tailLayout}>
                     <Button type="primary" htmlType="submit">
-                    Submit
+                        Submit
                     </Button>
                 </Form.Item>
             </Form>
