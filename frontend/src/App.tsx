@@ -5,7 +5,7 @@ import Home from './components/Home';
 
 function App() {
 
-  axios.defaults.baseURL = 'http://127.0.0.1:8000/api/';
+  axios.defaults.baseURL = 'https://opening-endpoints.herukoapp.com';
 
   return (
     <Router>
