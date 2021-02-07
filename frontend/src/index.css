@@ -1,6 +1,12 @@
 @import "~antd/dist/antd.dark.css";
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: "Inconsolata", monospace;

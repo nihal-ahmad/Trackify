@@ -1,0 +1,8 @@
+.col {
+    height: 83.5vh;
+        display:"flex";
+  align-items: "center";
+    overflow: scroll;
+    border-radius: 1.5em;
+    background-color: #808F94;
+}

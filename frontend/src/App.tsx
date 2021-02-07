@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
-
+import Dashboard from "./components/Dashboard/Dashboard";
 function App() {
 
   axios.defaults.baseURL = 'https://opening-endpoints.herukoapp.com';
@@ -14,6 +14,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/" exact component={Home}/>
+          <Route path="/dashboard" exact component={Dashboard}/>
         </Switch>
       </Router>
     </Provider>
