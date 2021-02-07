@@ -5,6 +5,7 @@ import store from './store/store';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Dashboard from "./components/Dashboard/Dashboard";
+import Navbar from './components/Navbar/Navbar';
 function App() {
 
   axios.defaults.baseURL = 'https://opening-endpoints.herukoapp.com';
@@ -12,6 +13,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
+        <Navbar/>
         <Switch>
           <Route path="/" exact component={Home}/>
           <Route path="/dashboard" exact component={Dashboard}/>

@@ -1,77 +1,40 @@
-import React from 'react'
-import {Layout,Row,Col,Button} from 'antd';
-import "./index.css"
-const Column = () => {
-    
-    const { Content } = Layout;
-    return (
-        <Layout>
-           
-        <Content >  
- 
-  <Row style={{display:"flex",justifyContent: "center",alignItems: "center",paddingTop: "4.8em",paddingBottom: ".2em"}}>
+import React from 'react';
+import { Menu } from 'antd';
+import JobPreview from '../Job/JobPreview';
 
-<Button type="primary" ghost>
-     ADD JOB
-    </Button>
-  </Row>
-    <Row  style={{display: "flex",justifyContent: "center",height: "83.5vh"}}  >
-      <Col xs={24} sm={24} md={11} lg={4} xl={4} className="col">
-        <div >col-6</div>
-        <div >col-6</div>
-        <div>col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
+interface Data{
+  id : number;
+  company : string;
+  position : string;
+  date : string;
+  status : string;
+}
 
-        <div >col-6</div>
-        <div >col-6</div><div>col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
+interface Props {
+  data : Data[]
+}
 
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        <div >col-6</div>
-        
+const Column = ( props : Props ) => {
+  return (
+    <Menu
+    mode="inline"
+    theme="dark"
+    style={{ width:350, marginLeft : 20 }}
+    >
+      {props.data.map( d => {
+        return (
+          <JobPreview
+            id={d.id}
+            company={d.company}
+            position={d.position}
+            date="01/09/2021"
+            status={d.status}
+          />
+        );
+      })}
 
-      
-      </Col>
-      <Col xs={24} sm={24} md={11} lg={4} xl={4} className="col">
-        <div >col-6</div>
-      </Col>
-      <Col xs={24} sm={24} md={11} lg={4} xl={4} className="col">
-        <div >col-6</div>
-      </Col>
-      <Col xs={24} sm={24} md={11} lg={4} xl={4} className="col">
-        <div >col-6</div>
-      </Col>
-      <Col xs={24} sm={24} md={22} lg={4} xl={4} className="col">
-        <div>col-6</div>
-      </Col>
-    </Row>
-    </Content>
-    </Layout>
-    );
-};
+    </Menu>
+  )
+}
 
-export default Column;
+export default Column
