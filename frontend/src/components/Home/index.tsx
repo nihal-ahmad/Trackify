@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { Row,Layout, Menu,} from "antd";
 import AuthenticationNavigation from "../Navigations/AuthenticationNavigation";
 import GuestMode from "../GuestMode/GuestMode";
-import Navbar from "../Navbar/Navbar";
+
 
 const Home = () => {
   const history = useHistory();
@@ -22,7 +22,7 @@ const Home = () => {
 return(
     <>
   <Layout style={{height: "100vh", width: "100vw"}}>
-    <Navbar />
+    
   
 <Content style={{paddingTop: "5em"}}>
       <Row>
@@ -35,7 +35,9 @@ return(
         <GuestMode />
       </Row>
       </Content>
-    <Footer style={{ textAlign: 'center' }}>TRACKIFY ©2021 Created by Team</Footer>
+    <Footer style={{ textAlign: 'center',display: "flex",justifyContent: "space-between" }}>
+      <h1>TRACKIFY ©2021 Created by <b>Nihal Ahmad | Saifur Rehman</b></h1>
+      <h1>About Us</h1></Footer>
       </Layout>
   
 
