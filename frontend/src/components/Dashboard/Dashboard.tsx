@@ -1,20 +1,19 @@
 import React from 'react';
 import { Row } from 'antd';
-import ToApply from './Section/ToApply';
-import Applied from './Section/Applied';
-import Ongoing from './Section/Ongoing';
-import Rejected from './Section/Rejected';
-import Offer from './Section/Offer';
-
+import Heading from "./Section/Heading";
 
 const Dashboard =() => {
     return (
       <Row>
-        <ToApply/>
-        <Applied/>
-        <Ongoing/>
-        <Rejected/>
-        <Offer/>
+        <Row style={{display: "flex",justifyContent: "center"}}>
+        <Heading color="blue" text="APPLIED" status="applied"/>
+        <Heading color="gold" text="TO APPLY" status="to apply"/>
+        <Heading color="magenta" text="ONGOING" status="ongoing"/>
+        <Heading color="green" text="OFFER" status="offer"/>
+        <Heading color="red" text="REJECTED" status="rejected"/>
+        
+      </Row>      
+
       </Row>
     );
 };

@@ -14,7 +14,7 @@ const Navbar = () => {
     const { Header} = Layout;
     return (
         <Layout>
-            <Header style={{ position: 'fixed', zIndex: 1, width: "100%"}}>
+            <Header style={{ position: 'fixed', zIndex: 1, width: "100%",height: "10vh"}}>
 
 <Menu theme="dark" mode="horizontal" style={{width: "100%"}} >
     <Menu.Item key= "1" style={{backgroundColor: "transparent",paddingRight: "0"}} >
