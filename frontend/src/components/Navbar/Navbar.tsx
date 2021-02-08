@@ -16,14 +16,12 @@ const Navbar = () => {
         <Layout>
             <Header style={{ position: 'fixed', zIndex: 1, width: "100%",height: "10vh"}}>
 
-<Menu theme="dark" mode="horizontal" style={{width: "100%"}} >
+<Menu theme="dark" mode="horizontal" style={{width: "100%",display: "flex",justifyContent: "center"}} >
     <Menu.Item key= "1" style={{backgroundColor: "transparent",paddingRight: "0"}} >
         <img src="favicon.ico"></img>
     </Menu.Item>
-<Menu.Item key="2" style={{fontFamily: "'Cinzel', serif", fontSize: "1.4em",backgroundColor: "transparent",color: "#A4ABAB",paddingLeft: "1em"}} onClick={Handler2}>TRACKIFY</Menu.Item>
-<Menu.Item key="3" style={{float: "right",fontFamily: "'Cinzel', serif", fontSize: "1.4em",backgroundColor: "transparent", }} onClick={Handler1}><Button type="primary" ghost>
-     TRY NOW
-    </Button></Menu.Item>
+<Menu.Item key="2" style={{fontFamily: "'Cinzel', serif", fontSize: "1.6em",backgroundColor: "transparent",color: "#A4ABAB",paddingLeft: ".3em"}} onClick={Handler2}><strong>TRACKIFY</strong></Menu.Item>
+
 </Menu>
 </Header>
         </Layout>
