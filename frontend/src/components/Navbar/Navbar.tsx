@@ -20,7 +20,7 @@ const Navbar = () => {
     <Menu.Item key= "1" style={{backgroundColor: "transparent",paddingRight: "0"}} >
         <img src="favicon.ico"></img>
     </Menu.Item>
-<Menu.Item key="2" style={{fontFamily: "'Cinzel', serif", fontSize: "1.6em",backgroundColor: "transparent",color: "#A4ABAB",paddingLeft: ".3em"}} onClick={Handler2}><strong>TRACKIFY</strong></Menu.Item>
+<Menu.Item key="2" style={{fontFamily: "'Cinzel', serif", fontSize: "1.8em",backgroundColor: "transparent",color: "#A4ABAB",paddingLeft: ".3em",alignItems: "center",paddingTop: ".1em"}} onClick={Handler2}><strong>TRACKIFY</strong></Menu.Item>
 
 </Menu>
 </Header>

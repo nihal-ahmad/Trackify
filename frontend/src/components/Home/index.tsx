@@ -1,13 +1,11 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { Row,Layout, Menu,} from "antd";
-import AuthenticationNavigation from "../Navigations/AuthenticationNavigation";
-import GuestMode from "../GuestMode/GuestMode";
-
+import { Row,Layout,Col,Carousel,Button} from "antd";
+import "./index.css";
 
 const Home = () => {
   const history = useHistory();
-
+ 
   useEffect(() => {
     if (
       sessionStorage.getItem("token") 
@@ -16,31 +14,54 @@ const Home = () => {
       history.push("/dashboard");
     }
   },[]);
+  const Handler = () => {
+    history.push("/login");
+  }
+  const { Content} = Layout;
   
-  const { Content, Footer } = Layout;
-
 return(
     <>
-  <Layout style={{height: "100vh", width: "100vw"}}>
-    
-  
-<Content style={{paddingTop: "5em"}}>
-      <Row>
-        <AuthenticationNavigation />
-      </Row>
-      <Row style={{ display: "flex", justifyContent: "center" }}>
-        <h1 style={{ marginTop: 50, marginBottom: 20 }}>or</h1>
-      </Row>
-      <Row style={{ display: "flex", justifyContent: "center" }}>
-        <GuestMode />
-      </Row>
-      </Content>
-    <Footer style={{ textAlign: 'center',display: "flex",justifyContent: "space-between" }}>
-      <h1>TRACKIFY ©2021 Created by <b>Nihal Ahmad | Saifur Rehman</b></h1>
-      <h1>About Us</h1></Footer>
+  <Layout style={{ height: "100vh",width: "100vw"}}>
+    <Content style={{height: "100vh"}}>
+     
+<Row  className="glow">
+      Simplify Your Job Hunt
+    </Row>
+ <Row style={{display:"flex",justifyContent: "center",marginTop: "10vh",alignItems: "center"}}>
+<Row >
+
+  <h2 className="p1">Track your application progress in a seamless and intuitive way <b style={{color: "#7BC74D"}}>✔</b></h2>
+  </Row>
+  <Row >
+  <h2 className="p1">Apply anywhere - get it tracked in one place. <b style={{color: "#7BC74D"}}>✔</b></h2>
+ 
+  </Row> 
+<Row > 
+  <h2 className="p1">Application process is visualized like no spreadsheet can do <b style={{color: "#7BC74D"}}>✔</b></h2>
+</Row> 
+</Row>
+  <Row style={{display: "flex",justifyContent: "center",marginTop:"5vh"}}>
+  <Button  style={{marginRight: "1em"}} onClick={Handler} size="large" shape="round" type="primary" ghost>
+      Try it out!
+    </Button>
+    <Button onClick={Handler}  size="large" type="primary" shape="round" >
+      Sign up for free
+    </Button>
+  </Row>
+  <Row style={{display: "flex",justifyContent: "space-between",marginTop: "5vh",paddingLeft: ".7em"}}>
+    <Col>
+    <h1><b>TRACKIFY</b> ©2021 Created by <strong>Nihal Ahmad | Saifur Rehman</strong></h1>
+    </Col>
+  <Col>
+  <h1 style={{cursor: "pointer",paddingRight: ".7em"}}><b>About Us</b></h1>
+  </Col>
+  </Row>
+   
+  </Content>
+      
+   
       </Layout>
   
-
 </>
   );
 };
