@@ -15,16 +15,16 @@ justify-content: center;
 
 .glow {
 
-  color:white;
+
   font-size:4em;
   text-align:center;
   animation: neonGlow 2s infinite alternate cubic-bezier(0.455, 0.030, 0.515, 0.955);
   display: flex;
   justify-content: center;
-  padding-top: 15vh;
+  padding-top: 4em;
   align-items: center;
-  font-family: 'Libre Baskerville', serif;
-  color: #9A183E;
+
+  color: silver;
 }
 
 @keyframes neonGlow {
