@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Row,Layout,Col,Carousel,Button} from "antd";
 import "./index.css";
-
+import Navbar from  "../Navbar/Navbar";
 const Home = () => {
   const history = useHistory();
  
@@ -21,12 +21,17 @@ const Home = () => {
   
 return(
     <>
-  <Layout style={{ height: "100vh",width: "100vw"}}>
-    <Content style={{height: "100vh"}}>
-     
-<Row  className="glow">
-      Simplify Your Job Hunt
-    </Row>
+  
+    <Navbar />
+    <Layout style={{width: "100vw"}}>
+      <Content>
+   <Row className="glow">
+   Simplify Your Job Hunt
+  </Row>
+
+
+
+
  <Row style={{display:"flex",justifyContent: "center",marginTop: "10vh",alignItems: "center"}}>
 <Row >
 
@@ -48,20 +53,8 @@ return(
       Sign up for free
     </Button>
   </Row>
-  <Row style={{display: "flex",justifyContent: "space-between",marginTop: "5vh",paddingLeft: ".7em"}}>
-    <Col>
-    <h1><b>TRACKIFY</b> ©2021 Created by <strong>Nihal Ahmad | Saifur Rehman</strong></h1>
-    </Col>
-  <Col>
-  <h1 style={{cursor: "pointer",paddingRight: ".7em"}}><b>About Us</b></h1>
-  </Col>
-  </Row>
-   
   </Content>
-      
-   
       </Layout>
-  
 </>
   );
 };
