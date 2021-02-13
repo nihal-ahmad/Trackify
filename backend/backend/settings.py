@@ -23,7 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost',
+                 '127.0.0.1', 'opening-endpoints.herokuapp.com']
 
 
 # Application definition
@@ -154,7 +155,7 @@ CORS_ALLOW_HEADERS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://fyle-endpoints.herokuapp.com",
+    "https://trackifytech.netlify.app/",
     "http://localhost:8080",
     "http://127.0.0.1:9000",
     "http://localhost:3000",
