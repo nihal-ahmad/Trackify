@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Navbar from "./components/Navbar/Navbar";
 import Login from "./components/Login/Login";
+import Contact from "./components/Home/Contact/Contact";
 function App() {
   axios.defaults.baseURL = "https://opening-endpoints.herukoapp.com";
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/dashboard" exact component={Dashboard} />
           <Route path="/login" exact component={Login} />
+          <Route path="/contact" exact component={Contact} />
         </Switch>
       </Router>
     </Provider>
