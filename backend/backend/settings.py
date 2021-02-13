@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-
+import dj_database_url
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -19,11 +20,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'o_(*1e@=u9dwk-k99b3f*t1t!i4i@qd4puv$w(z_^20$mk==rc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+SECRET_KEY = os.environ.get(
+    'DJANGO_SECRET_KEY', 'o_(*1e@=u9dwk-k99b3f*t1t!i4i@qd4puv$w(z_^20$mk==rc')
 
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost',
                  '127.0.0.1', 'opening-endpoints.herokuapp.com']
@@ -86,6 +87,8 @@ DATABASES = {
     }
 }
 
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
