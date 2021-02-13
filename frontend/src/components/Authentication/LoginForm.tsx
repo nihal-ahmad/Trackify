@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import { Form, Input, Button, Checkbox, Alert } from 'antd';
+import { Form, Input, Button, Alert } from 'antd';
 
 const layout = {
     labelCol: { span: 6 },
@@ -22,7 +22,9 @@ function LoginForm() {
             password : values.password
         }
 
-        axios.post('/login', confidential)
+        console.log(confidential);
+
+        axios.post('login', confidential)
             .then( res => {
                 sessionStorage.setItem("username",res.data.username);
                 sessionStorage.setItem("token",res.data.token);
@@ -71,9 +73,6 @@ function LoginForm() {
                     <Input.Password />
                 </Form.Item>
 
-                <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-                    <Checkbox>Remember me</Checkbox>
-                </Form.Item>
 
                 <Form.Item {...tailLayout}>
                     <Button type="primary" htmlType="submit">

@@ -9,7 +9,13 @@ import Navbar from "./components/Navbar/Navbar";
 import Login from "./components/Login/Login";
 import Contact from "./components/Home/Contact/Contact";
 function App() {
-  axios.defaults.baseURL = "https://opening-endpoints.herukoapp.com";
+
+  //productions
+  axios.defaults.baseURL = "https://trackify-endpoints.herukoapp.com/";
+
+  //development
+  // axios.defaults.baseURL = "http://127.0.0.1:8000";
+
 
   return (
     <Provider store={store}>
