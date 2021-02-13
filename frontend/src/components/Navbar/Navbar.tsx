@@ -10,7 +10,7 @@ const Navbar = () => {
     //     history.push("/dashboard");
     // }
     const Handler2 = () => {
-        history.push("/");
+        history.push("/contact");
     }
     const { SubMenu } = Menu;
 
