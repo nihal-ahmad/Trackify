@@ -22,7 +22,7 @@ function LoginForm() {
             password : values.password
         }
 
-        axios.post('login', confidential)
+        axios.post('/login', confidential)
             .then( res => {
                 sessionStorage.setItem("username",res.data.username);
                 sessionStorage.setItem("token",res.data.token);
