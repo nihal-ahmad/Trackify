@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from 'axios';
+import moment from "moment";
 import { Form, Input, Button, DatePicker, Select, Tag } from 'antd';
 
 const { Option } = Select;
@@ -10,17 +12,60 @@ interface Props {
     position? : string;
     date? : string;
     notes? : string;
+    update? : boolean;
 }
 
 const DumbModal = ( props : Props ) => {
+
+    const [referesh, setRefresh ] = React.useState(undefined)
 
     const layout = {
         labelCol: { span: 6 },
         wrapperCol: { span: 20 },
     };
 
+    const dateFormat = 'YYYY/MM/DD';
+
     const onFinish = (values: any) => {
-        console.log('Success:', values);
+        const date = moment(values.applied_date).format("YYYY-MM-DD")
+        const token = sessionStorage.getItem("token");
+
+
+        const bodyParameters = {
+          company : (values.company===undefined ? props.company : values.company),
+          role : (values.position === undefined ? props.position : values.position),
+          status : (values.status===undefined ? props.status : values.status),
+          notes : (values.notes===undefined ? props.notes : values.notes),
+          applied_date : date
+        }
+
+        console.log(bodyParameters)
+
+        const config = {
+            headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+        };
+        if(props.update===false){
+            axios.post('/api/create',bodyParameters,config)
+              .then(res => {
+                console.log("Status",res.data);
+                window.location.reload();
+              })
+              .catch(err => {
+                console.log(err.message)
+              })
+        }else{
+            const updatedBody = {...bodyParameters, id : props.id }
+            axios.post('/api/update',updatedBody,config)
+              .then(res => {
+                console.log("Status",res.data)
+                window.location.reload();
+              })
+              .catch(err => {
+                console.log(err.message)
+              })
+        }
+
+        // console.log('Success:', values);
     };
 
     const onFinishFailed = (errorInfo: any) => {
@@ -44,31 +89,35 @@ const DumbModal = ( props : Props ) => {
             <Form.Item
                 label="Company Name"
                 name="company"
-                rules={[{ required: true, message: 'Please enter company!' }]}
+                rules={[{ required: !props.update, message: 'Please enter company!' }]}
             >
-                <Input value={props.company}/>
+                <Input defaultValue={props.company}/>
             </Form.Item>
 
             <Form.Item
                 label="Position"
                 name="position"
-                rules={[{ required: true, message: 'Please enter position!' }]}
+                rules={[{ required: !props.update, message: 'Please enter position!' }]}
             >
-                <Input value={props.position}/>
+                <Input defaultValue={props.position}/>
             </Form.Item>
 
             <Form.Item
                 label="Extra Notes"
                 name="notes"
             >
-                <Input.TextArea/>
+                <Input.TextArea defaultValue={props.notes}/>
             </Form.Item>
 
             <Form.Item
                 label="Date"
                 name="applied_date"
             >
-                <DatePicker onChange={onChange} />
+                <DatePicker
+                    defaultValue={moment('2021/02/14',dateFormat)}
+                    onChange={onChange}
+                    format={dateFormat}
+                />
             </Form.Item>
 
             <Form.Item
@@ -108,7 +157,9 @@ const DumbModal = ( props : Props ) => {
                 </Select>
             </Form.Item>
 
-            <Button>Apply</Button>
+            <Form.Item>
+                <Button htmlType="submit" onClick={() => setRefresh(undefined)}>Apply</Button>
+            </Form.Item>
         </Form>
     )
 }

@@ -33,21 +33,13 @@ const AddButton = ( props : Props ) => {
            height: "4vh",
            paddingTop: "3em"
         }}>
-             {/* <Button shape="round" style={{height: "6em"}} type="primary" ghost>
-      
- 
-            <AddCircleIcon 
-            
-                style={{width:"3em", height:"3em"}}
-                onClick={showModal}
-            />
-               </Button> */}
-               <Fab color="primary" aria-label="add">
-        <AddIcon onClick={showModal}/>
-      </Fab>
+            <Fab color="primary" aria-label="add">
+                <AddIcon onClick={showModal}/>
+            </Fab>
             <Modal title="Enter Details" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
                 <ModalDetail
                     status={props.status}
+                    update={false}
                 />
             </Modal>
         </div>
