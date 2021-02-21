@@ -1,7 +1,7 @@
 import React,{ useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import landing1 from "./Landing1.png"
-import landing2 from "./Landing2.png"
+import frame1 from "./frame1.png"
+import frame2 from "./frame2.png"
 import { Row,Layout,Col,Button} from "antd";
 import "./index.css";
 const LandingPage = () => {
@@ -46,13 +46,13 @@ const LandingPage = () => {
 </Row>
 </Col>
 <Col style={{display: "flex",justifyContent: "center",alignItems: "center"}} span={12} sm={22} xs={22}lg={12}>
-<img style={{height: "85%",width: "85%",paddingTop: "3em",borderRadius: "1em"}} src={landing1} alt="landingimage"></img>
+<img style={{height: "85%",width: "85%",paddingTop: "3em",borderRadius: "1em"}} src={frame1} alt="landingimage"></img>
 </Col>
 </Row>
 
 <Row style={{display: "flex",justifyContent: "center",height: "100vh",width: "100vw"}}>
 <Col style={{display: "flex",justifyContent: "center",alignItems: "center"}} span={12} sm={24} xs={24}lg={12}>
-<img style={{height: "85%",width: "85%",paddingTop: "3em",borderRadius: "1em"}} src={landing2} alt="landingimage"></img>
+<img style={{height: "85%",width: "85%",paddingTop: "3em",borderRadius: "1em"}} src={frame2} alt="landingimage"></img>
 </Col>
 
 <Col style={{display: "flex",alignItems: "center",justifyContent: "center",paddingTop: "3vh"}} span={12} xs={24} sm={24} lg={12}>
