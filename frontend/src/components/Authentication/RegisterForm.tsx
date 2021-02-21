@@ -29,13 +29,13 @@ function RegisterForm() {
 
                 console.log(sessionStorage);
 
-                history.push("/arena");
+                history.push("/dashboard");
             })
             .catch( err => {
                 console.log(err.message);
             })
       };
-    
+
     const onFinishFailed = (errorInfo: any) => {
         console.log('Failed:', errorInfo);
     };

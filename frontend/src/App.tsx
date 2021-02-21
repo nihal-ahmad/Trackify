@@ -11,10 +11,10 @@ import Contact from "./components/Home/Contact/Contact";
 function App() {
 
   //productions
-  axios.defaults.baseURL = "https://trackify-endpoints.herukoapp.com/";
+  // axios.defaults.baseURL = "https://trackify-endpoints.herukoapp.com/";
 
   //development
-  // axios.defaults.baseURL = "http://127.0.0.1:8000";
+  axios.defaults.baseURL = "http://127.0.0.1:8000";
 
 
   return (

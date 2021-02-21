@@ -33,13 +33,11 @@ const JobPreview = ( props : Props ) => {
       };
 
     return (
-        <div>
-            <Menu.Item onClick={showModal}>
-                <Card.Grid style={gridStyle}>
-                    <p>{props.company} | <strong>{props.position}</strong></p>
-                    <i>Date : {props.date}</i>
-                </Card.Grid>
-            </Menu.Item>
+        <Menu.Item onClick={showModal} key="1">
+            <Card.Grid style={gridStyle}>
+                <p>{props.company} | <strong>{props.position}</strong></p>
+                <i>Date : {props.date}</i>
+            </Card.Grid>
             <Modal title="Enter Details" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
                 <ModalDetail
                     id={props.id}
@@ -48,7 +46,7 @@ const JobPreview = ( props : Props ) => {
                     status={props.status}
                 />
             </Modal>
-        </div>
+        </Menu.Item>
     )
 }
 
