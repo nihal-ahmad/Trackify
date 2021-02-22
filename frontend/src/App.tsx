@@ -8,6 +8,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Navbar from "./components/Navbar/Navbar";
 import Login from "./components/Login/Login";
 import Contact from "./components/Home/Contact/Contact";
+import About from "./components/Home/About/About";
 function App() {
 
   //productions
@@ -26,6 +27,7 @@ function App() {
           <Route path="/dashboard" exact component={Dashboard} />
           <Route path="/login" exact component={Login} />
           <Route path="/contact" exact component={Contact} />
+          <Route path="/about" exact component={About} />
         </Switch>
       </Router>
     </Provider>
