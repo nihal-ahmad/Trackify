@@ -50,7 +50,7 @@ function About() {
   </Row>
   <br />
   <Row className="row">
-  # In a nutshell,<b className="bold">Trackify</b> a platform,simplifies and manages a student's dream to 
+  # In a nutshell,<b className="bold">Trackify</b> as a platform,simplifies and manages a student's dream to 
   land jobs.
   </Row>
   <br />
