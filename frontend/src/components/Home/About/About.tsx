@@ -1,57 +1,23 @@
 import React from 'react';
-
-import { Row, Col ,Layout} from 'antd';
-
-const items = [
-  {
-    key: '1',
-    icon: <i className="fas fa-chart-pie"></i>,
-    title: 'High Performance',
-    content: 'cu nostro dissentias consectetuer mel. Ut admodum conceptam mei, cu eam tation fabulas abhorreant. His ex mandamus.',
-  },
-  {
-    key: '2',
-    icon: <i className="fas fa-desktop"></i>,
-    title: 'Flat Design',
-    content: 'cu nostro dissentias consectetuer mel. Ut admodum conceptam mei, cu eam tation fabulas abhorreant. His ex mandamus.',
-  },
-]
+import "./index.css"
+import { Row, Col ,Layout,Card} from 'antd';
+import nihal from "./nihal-ahmad.jpeg"
+import saifur from "./saifur-rehman.jpg"
+import github from "./github-logo.svg"
+import linkedin from "./linkedin.svg"
+import resume from "./resume.svg"
 
 function About() {
   const {Content} = Layout;
+  const {Meta} = Card;
+  
   return (
-    // <div id="about" className="block aboutBlock">
-    //   <div className="container-fluid">
-    //     <div className="titleHolder">
-    //       <h2>About Us</h2>
-    //       <p>dolor sit amet, consectetur adipisicing elit</p>
-    //     </div>
-    //     <div className="contentHolder">
-    //       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit necessitatibus officiis repudiandae est deserunt delectus dolorem iure porro distinctio fuga, nostrum doloremque. Facilis porro in laborum dolor amet ratione hic? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aut a porro, adipisci quidem sint enim pariatur ducimus, saepe voluptatibus inventore commodi! Quis, explicabo molestias libero tenetur temporibus perspiciatis deserunt.</p>
-    //     </div>
-    //     <Row gutter={[16, 16]}>   
-    //       {items.map(item => {
-    //         return (
-    //           <Col md={{ span: 8 }} key={item.key}>
-    //             <div className="content">
-    //               <div className="icon">
-    //                 {item.icon}
-    //               </div>
-    //               <h3>{item.title}</h3>
-    //               <p>{item.content}</p>
-    //             </div>
-    //           </Col>
-    //         );
-    //       })}
-    //     </Row>
-    //   </div>
-    // </div>
     <>
-    <Layout>
+    <Layout style={{display: "flex",
+  justifyContent: "center"}}> 
       <Content style={{
         paddingTop: "12vh",
-      paddingLeft: "3vw",
-      // paddingRight: "1vw"
+    
       }}>
 <Row style={{
   display: "flex",
@@ -75,34 +41,19 @@ function About() {
   
 </Row>
 <br />
-<Row style={{
- display: "flex",
- justifyContent: "center",
- alignItems: "center",
- fontSize: "1.7em",
- color: "#A0A0A0"
-}}>
+<Row className="row">
   # Messy spreadsheets, lost emails, lack of information.
   </Row>
-  <Row style={{
- display: "flex",
- justifyContent: "center",
- alignItems: "center",
- fontSize: "1.7em",
- color: "#A0A0A0"
-}}>
+  <br />
+  <Row className="row">
   # We decided to make a job search simple and data-driven and career advising efficient.
   </Row>
-  <Row style={{
- display: "flex",
- justifyContent: "center",
- alignItems: "center",
- fontSize: "1.7em",
- color: "#A0A0A0"
-}}>
-  # In a nutshell, <b>Trackify </b>as a platform,simplifies and manages a student's dream to 
+  <br />
+  <Row className="row">
+  # In a nutshell,<b className="bold">Trackify</b> as a platform,simplifies and manages a student's dream to 
   land jobs.
   </Row>
+  <br />
 <br />
 <Row style={{
   display: "flex",
@@ -115,14 +66,94 @@ function About() {
   }}>Our Team :</b>
 </Row >
 <br />
-<Row style={{backgroundColor: "#3690CC"}}>
-  <Col xs={22} sm={22} lg={12}>
+<Row style={{
+display: "flex",
+justifyContent: "space-around",
+// alignItems: "center"
+}} >
+  <Col xs={22} sm={22} lg={12} style={{display: "flex",
+  justifyContent: "center",
+marginBottom: "3em",
 
+}}>
+  <Row>
+  <Card
+    style={{ width: 350,borderRadius: "4em",
+  marginBottom: "1em" 
+  }}
+    cover={
+      <img
+        alt="example"
+        src={nihal}
+        style={{borderRadius: "4em"}}
+      />
+    }
+   hoverable={true}
+
+  >
+    
+    <Meta
+      style={{display: "flex",justifyContent: "center"}}
+      title="Nihal Ahmad | Software Developer"
+      description="I am a Software Developer Persuing B.Tech in ECE from Jamia Millia Islamia.
+      Worked on Frontend of Trackify. Have keen interest in development and ready to adapt to new technologies."
+    />
+  </Card>
+  <Row style={{paddingLeft: "8em",alignItems: "center"}}>
+<span style={{marginRight:"1em"}}>
+<a href={"https://github.com/nihal-ahmad"} target={"_blank"}><img src={github} className="img"/></a>
+</span>
+<span style={{marginRight:"1em"}}>
+<a href={"https://www.linkedin.com/in/nihal-ahmad-46042a192"} target={"_blank"}><img src={linkedin} className="img"/></a>
+</span>
+<span style={{marginRight:"1em"}}>
+<a href={"https://drive.google.com/file/d/1Cs1rIyHZHGmrgzjKcgmDkTEQfW8EaZW5/view"} target={"_blank"}><img src={resume} className="img"/></a>
+</span>
+</Row>
+  </Row>
+ 
   </Col>
-  <Col xs={22} sm={22} lg={12}>
-
+  <Col xs={22} sm={22} lg={12} style={{display: "flex",
+  justifyContent: "center",
+marginBottom: "3em",
+}}>
+  <Row>
+  <Card
+    style={{ width: 350,borderRadius: "4em",marginBottom:"1em" }}
+    cover={
+      <img
+        alt="example"
+        src={saifur}
+        style={{borderRadius: "4em"}}
+      />
+    }
+    hoverable={true}
+   
+  >
+    
+    <Meta
+      style={{display: "flex",justifyContent: "center"}}
+      title="Saifur Rehman | Software Developer"
+      description="I am a Software Developer Persuing B.Tech in CSE from Jamia Millia Islamia.
+      Worked on Backend of Trackify. Have keen interest in development and Data Structures and Algorithms."
+    />
+  </Card>
+  <Row style={{paddingLeft: "8em",alignItems: "center"}}>
+<span style={{marginRight:"1em"}}>
+<a href={"https://github.com/Saifu0"} target={"_blank"}><img src={github} className="img"/></a>
+</span>
+<span style={{marginRight:"1em"}}>
+<a href={"https://www.linkedin.com/in/saifur-rehman-khan-5770a9172/"} target={"_blank"}><img src={linkedin} className="img"/></a>
+</span>
+<span style={{marginRight:"1em"}}>
+<a href={"https://drive.google.com/file/d/1RciXgfhS3qv0lDQMrEpA8cR1_VVuJdS9/view?usp=sharing"} target={"_blank"}><img src={resume} className="img"/></a>
+</span>
+</Row>
+  </Row>
+  
   </Col>
 </Row>
+
       </Content>
     </Layout>
     </>
