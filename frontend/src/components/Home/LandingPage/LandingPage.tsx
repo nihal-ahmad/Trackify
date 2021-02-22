@@ -73,12 +73,7 @@ const LandingPage = () => {
 </Row>
 </Row>
 </Col>
-
 </Row>
-
-{/* <Row style={{display: "flex",justifyContent: "center",alignItems: "center",height: "8vh",marginTop: "1em",fontSize: "1.4em"}}>
-<b>Trackify @ 2021</b>
-</Row> */}
 </Content>
 </Layout>
     );

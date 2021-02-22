@@ -19,7 +19,6 @@ const Navbar = () => {
   const onClose = () => {
     setVisible(false);
   };
-  // const { SubMenu } = Menu;
   return (
     <Layout style={{ width: "100%" }}>
       <Menu
