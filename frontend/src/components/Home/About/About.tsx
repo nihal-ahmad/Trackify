@@ -107,7 +107,7 @@ marginBottom: "3em",
 <a href={"https://www.linkedin.com/in/nihal-ahmad-46042a192"} target={"_blank"}><img src={linkedin} className="img"/></a>
 </span>
 <span style={{marginRight:"1em"}}>
-<a href={"https://drive.google.com/file/d/1Cs1rIyHZHGmrgzjKcgmDkTEQfW8EaZW5/view"} target={"_blank"}><img src={resume} className="img"/></a>
+<a href={"https://drive.google.com/file/d/16zKrrpGBQUPRPgiBFboQFOEmaWPwdYsS/view"} target={"_blank"}><img src={resume} className="img"/></a>
 </span>
 </Row>
   </Row>
